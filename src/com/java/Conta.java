@@ -2,15 +2,25 @@ package com.java;
 
 public class Conta {
 	
+	int agencia;
 	int numero;
 	double saldo;
-	int agencia;
+	
 	
 	Cliente cliente = new Cliente();
 	
 	public Conta() {
 		
 	}
+	
+	public Conta (int agencia, int numero, double saldo) {
+		this.agencia = agencia;
+		this.numero = numero;
+		this.saldo = saldo;
+		
+	}
+	
+	
 	//Sobrecarga
 	public Conta(int numero) {
 		this.numero = numero;
@@ -22,23 +32,21 @@ public class Conta {
 		this.saldo = saldo;
 	}
 	
-	public Conta (int numero, double saldo) {
-		this.numero = numero;
-		this.saldo = saldo;
-		
-	}
-	
-	public double recuperaSaldo() {
-		return saldo;
-	}
-	
 	public void depositar (double valor) {
-		saldo = saldo + valor;
+		this.saldo += valor;
 	}
 	
 	public void retirar(double valor) {
-		saldo = saldo -valor;
+		this.saldo -= valor;
 	}
+	
+	
+	public double consultaSaldo() {
+		return saldo;
+	}
+	
+	
+	
 	
 	public void setAgencia(int agencia) {
 		this.agencia = agencia;
